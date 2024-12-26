@@ -16,4 +16,4 @@ for direction in open("day03_input.txt").read():
             location[1] -= 1
     houses[tuple(location)] += 1
 
-print(len([i for i in houses.values() if i > 0]))
+print(len(houses))
