@@ -7,8 +7,10 @@ def item_generator(json_input):
         case int():
             yield json_input
         case dict():
-            for k, v in json_input.items():
-                yield from item_generator(v)
+            values = json_input.values()
+            if "red" not in values:
+                for v in values:
+                    yield from item_generator(v)
         case list():
             for item in json_input:
                 yield from item_generator(item)
